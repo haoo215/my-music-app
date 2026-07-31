@@ -6,7 +6,7 @@ import { myAlert } from '@/utils/alert.js';
 
 // 创建一个 axios 实例
 const request = axios.create({
-  baseURL: 'https://47.76.150.167:8332',
+  baseURL: 'http://47.76.150.167:8332',
   timeout: 10000,
   withCredentials: true
 })
