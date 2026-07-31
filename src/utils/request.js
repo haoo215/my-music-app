@@ -6,9 +6,9 @@ import { myAlert } from '@/utils/alert.js';
 
 // 创建一个 axios 实例
 const request = axios.create({
-  baseURL: 'http://localhost:8332', 
-  timeout: 10000,  // 超时时间 10 秒
-    withCredentials: true 
+  baseURL: 'http://47.76.150.167:8332', 
+  timeout: 10000,
+  withCredentials: true 
 })
 
 // 登录接口：优化参数校验、响应解构、变量命名
