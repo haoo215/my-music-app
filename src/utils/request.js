@@ -6,7 +6,7 @@ import { myAlert } from '@/utils/alert.js';
 
 // 创建一个 axios 实例
 const request = axios.create({
-  baseURL: 'http://47.76.150.167:8332',
+  baseURL: import.meta.env.DEV ? 'http://localhost:8332' : '/api',
   timeout: 10000,
   withCredentials: true
 })
