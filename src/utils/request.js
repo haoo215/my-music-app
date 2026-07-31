@@ -6,9 +6,9 @@ import { myAlert } from '@/utils/alert.js';
 
 // 创建一个 axios 实例
 const request = axios.create({
-  baseURL: 'http://47.76.150.167:8332', 
+  baseURL: 'http://47.76.150.167:8332',
   timeout: 10000,
-  withCredentials: true 
+  withCredentials: true
 })
 
 // 登录接口：优化参数校验、响应解构、变量命名
@@ -18,7 +18,7 @@ export const login = async ({ username, password }) => {
     throw new Error('用户名和密码不能为空');
   }
   const { data } = await request.post('/user/login', { username, password });
-  
+
   if (data.code !== '200' || !data.success) {
     throw new Error(data.msg || '登录失败，请稍后重试');
   }
@@ -107,12 +107,12 @@ request.interceptors.response.use(
     if (error.response) {
       const { status } = error.response;
 
-  if (window.location.pathname === '/login') {
-      return Promise.reject(error)
-    }
+      if (window.location.pathname === '/login') {
+        return Promise.reject(error)
+      }
 
       if (status === 401) {
-        logout(); 
+        logout();
         window.location.href = '/login';
         alert('登录状态已过期，请重新登录');
       }
@@ -131,7 +131,7 @@ request.interceptors.response.use(
 // 新增：检查功能点是否需要登录
 export function checkAuth() {
   if (!isLogin()) {
-        myAlert('请先登录哦-----------前端身份校验');
+    myAlert('请先登录哦-----------前端身份校验');
 
     return false
   }
