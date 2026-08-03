@@ -335,4 +335,44 @@ onBeforeUnmount(() => {
   opacity: 0;
   translate: 0 30px;
 }
+
+/* ===== 移动端悬浮播放器适配 ===== */
+@media (max-width: 768px) {
+  .player-wrapper {
+    bottom: 16px;
+    left: 12px;
+    right: 12px;
+    transform: none;
+    width: auto;
+  }
+
+  .player {
+    min-width: 0;
+    width: 100%;
+    padding: 10px 16px 10px 12px;
+    gap: 10px;
+  }
+
+  /* 移动端隐藏拖拽手柄，改为占满宽度的固定条 */
+  .drag-handle {
+    display: none;
+  }
+
+  .disk {
+    width: 40px;
+    height: 40px;
+  }
+
+  .song-name {
+    font-size: 13px;
+  }
+
+  .play-btn {
+    padding: 8px 14px;
+  }
+
+  .play-btn .text {
+    display: none;
+  }
+}
 </style>
